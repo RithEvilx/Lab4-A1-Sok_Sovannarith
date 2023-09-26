@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab4-A1-Sok Sovannarith(DL 03-10-2023)</title>
+    <style>
+      .container {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+      div {
+        margin-bottom: 10px;
+      }
+      input {
+        padding: 5px 10px;
+      }
+      .multimedia,
+      form {
+        border: 1px solid black;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="image" src="img/hello.png" />
+        <input type="hidden" name="id" value="10" />
+        <h1>Register Form</h1>
+        <div>
+          <label>Name:</label>
+          <input type="text" name="username" placeholder="input your name" />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="input your email" />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="input your password"
+          />
+        </div>
+        <div>
+          <label>How many hours you study a day?</label> <br />
+          <input type="number" name="hour" />
+        </div>
+        <div>
+          <label>What time you start your class?</label> <br />
+          <input type="time" name="time" id="time" />
+        </div>
+        <div>
+          <label>Gender:</label> <br />
+          <input type="radio" name="gender" value="male" /> <label>Male</label>
+          <br />
+          <input type="radio" name="gender" value="female" />
+          <label>Female</label> <br />
+        </div>
+        <div>
+          <label>What year you are study at?</label> <br />
+          <select name="selectYear">
+            <option value="y1">Year 1</option>
+            <option value="y2">Year 2</option>
+            <option value="y3">Year 3</option>
+            <option value="y4">Year 4</option>
+          </select>
+        </div>
+        <div>
+          <label>Choose your favorite subjects:</label> <br />
+          <input type="checkbox" name="subject" value="" /><label>Web Application Dev</label> <br />
+          <input type="checkbox" name="subject" value="" /><label>M.I.S</label> <br />
+          <input type="checkbox" name="subject" value="" /><label>OOAD</label> <br />
+          <input type="checkbox" name="subject" value="" /><label>SE and IT PM</label> <br />
+          <input type="checkbox" name="subject" value="" /><label>Linux System Admin</label> <br />
+        </div>
+        <div>
+          <label>Date of Birth</label> <br />
+          <input type="date" />
+        </div>
+        <div>
+          <label>Date of Birth with Time</label> <br />
+          <input type="datetime-local" name="datetime" id="datetime" />
+        </div>
+        <div>
+          <label>Your favorite month in 2023:</label> <br />
+          <input type="month" name="month" id="month" />
+        </div>
+        <div>
+          <label>Your favorite week in 2023:</label> <br />
+          <input type="week" name="week" id="week" />
+        </div>
+        <div>
+          <label>Search:</label
+          ><input type="search" id="search" name="search" /> <br />
+        </div>
+        <div><label>Tel:</label><input type="tel" id="tel" name="tel" /></div>
+        <div><label>Url:</label><input type="url" id="url" name="url" /></div>
+        <div>
+          <label for="price">Choose your age:</label> <br />
+          <input
+            type="range"
+            name="price"
+            id="age"
+            min="1"
+            max="120"
+            step="1"
+            value="1"
+          />
+          <output class="age-output" for="age"></output>
+        </div>
+        <div>
+          <label>Pick you favorite color:</label>
+          <input type="color" name="color" id="color" />
+        </div>
+        <div>
+          <textarea name="txtfeedback" cols="30" rows="10">your feedback</textarea>
+        </div>
+        <div>
+          <input type="submit" name="btnsubmit" value="Submit" />
+          <input type="reset" name="btnreset" value="Clear" />
+        </div>
+      </form>
+      <div class="multimedia">
+        <h1>MultiMedia</h1>
+        <h2>+Audio</h2>
+        <div>
+          <audio src="multimedia/neary-dior.mp3" controls></audio>
+        </div>
+        <h2>+Video</h2>
+        <div>
+          <video
+            width="300"
+            src="multimedia/មិនច្បាស់ជាមួយអូន.mp4"
+            controls
+          ></video>
+        </div>
+        <h2>Canvas</h2>
+        <div>
+          <canvas
+            id="myCanvas"
+            width="300"
+            height="150"
+            style="border: 1px solid grey"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Range
+      const age = document.querySelector("#age");
+      const output = document.querySelector(".age-output");
+      output.textContent = age.value;
+      age.addEventListener("input", () => {
+        output.textContent = age.value;
+      });
+
+      //Canvas
+      let canvas = document.getElementById("myCanvas");
+      let ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(0, 0, 80, 80);
+    </script>
+  </body>
+</html>
